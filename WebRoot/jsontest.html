@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jsontest.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<script type="text/javascript" src="js/my.js"></script> 
+    	<script type="text/javascript" src="js/jquery-1.11.0.js"></script> 
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	//json语法，表示一个对象
+		function f1(){
+			var obj={"name":"zs","age":12};
+			alert(obj.name);
+		}
+	//json语法，表示一个对象
+		function f2(){
+			var obj={"name":"zs","address":{
+					"city":"beijing",
+					"room":"709"
+				}
+			}
+			alert(obj.address.room);
+		}
+	//json语法，表示一个对象组成的数组
+		function f3(){
+		  var arr=[{"name":"zs","age":12},{"name":"nihao","age":22}];
+		  alert(arr[1].name);
+		}
+		/*
+	 * json字符串转换成js对象
+	 */
+	function f4(){
+		//var str="{'name':'bianqing','age':27}";
+		//使用prototype提供的evalJSON函数，将
+		//json字符串转换成一个js对象
+		//var obj= jQuery.parseJSON(str);
+		//alert(obj.name);
+		//alert(typeof str);String类型
+		var str = '{"name":"John","age":"bianqing"}';
+		var obj = jQuery.parseJSON(str); 
+		alert(obj.name);
+	}
+	//将json字符串转换为一个js对象组成数组
+	function f5(){
+		var str="[{'name':'zs','age':'22'},"
+		+"{'name':'bainqing','age':'26'}]";//因为字符串，所以换行的+必须有
+		var obj =eval(str); 
+alert(obj[1].name);
+	}
+	</script>
+  </head>
+  
+  <body>
+    <a href="" onclick="f6();">点击我</a>
+  </body>
+</html>
